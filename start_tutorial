@@ -1,0 +1,20 @@
+if ! pip freeze | grep ipython > /dev/null; then
+   echo -e "python ipython not found! Install? (y/n) \c"
+   read
+   if "$REPLY" = "y"; then
+     pip install ipython   
+   fi
+fi
+
+if ! pip freeze | grep notebook > /dev/null; then
+   echo -e "python notebook not found! Install? (y/n) \c"
+   read
+   if "$REPLY" = "y"; then
+      pip install notebook
+   fi
+fi
+
+my_dir="$(dirname "$0")"
+jupyter notebook "$my_dir/tf_tutorial_code/cifar10/tf_tutorial.ipynb" 
+
+read
