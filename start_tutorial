@@ -15,6 +15,6 @@ if ! pip freeze | grep notebook > /dev/null; then
 fi
 
 my_dir="$(dirname "$0")"
-jupyter notebook "$my_dir/tf_tutorial_code/cifar10/tf_tutorial.ipynb" 
+jupyter notebook "$my_dir/tf_tutorial_code/tf_tutorial.ipynb" 
 
 read
